@@ -1,313 +1,251 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 
-	<html lang="en">
+<html lang="en">
+  <head>
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-        <head>
+    <link rel="stylesheet" href="css/bootstrap.css" />
 
-            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-            <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css" />
 
-            <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
 
-                <link rel="stylesheet" href="css/style.css">
+  <div class="container" id="header">
+    <a href="index.html" id="homeNav"
+      ><img id="headLogo" class="left" src="images/elm-park-logo.png"
+    /></a>
 
-                <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <ul class="noStyle right" id="navList">
+      <li><a href="contact.html" id="contactNav">Contact</a></li>
 
-        </head>
+      <li>|</li>
 
-        <div class="container" id="header">
+      <li><a href="land.html" id="landNav">Land</a></li>
 
-            <a href="index.html" id="homeNav"><img id="headLogo" class="left" src="images/elm-park-logo.png" /></a>
+      <li>|</li>
 
-            <ul class="noStyle right" id="navList">
+      <li><a href="development.html" id="devNav">Our developments</a></li>
 
-                <li><a href="contact.html" id="contactNav">Contact</a></li>
+      <li>|</li>
 
-                <li>|</li>
+      <li><a href="about.html" id="aboutNav">About Us</a></li>
 
-                <li><a href="land.html" id="landNav">Land</a></li>
+      <li>|</li>
 
-                <li>|</li>
+      <li><a href="index.html" id="homeNav">Home</a></li>
+    </ul>
 
-                <li><a href="development.html" id="devNav">Our developments</a></li>
+    <div class="mobile-nav">
+      <div class="mobile-btn" onclick="toggleMobMenu();">
+        <div></div>
 
-                <li>|</li>
+        <div></div>
 
-                <li><a href="about.html" id="aboutNav">About Us</a></li>
-
-                <li>|</li>
-
-                <li><a href="index.html" id="homeNav">Home</a></li>
-
-            </ul>
-
-            <div class="mobile-nav">
-
-                <div class="mobile-btn" onclick="toggleMobMenu();">
-
-                    <div></div>
-
-                    <div></div>
-
-                    <div></div>
-
-                </div>
-
-                <ul class="mobile-menu" id="mobile-menu">
-
-                    <li><a href="../" id="homeMobNav">Home</a></li>
-
-                    <li><a href="about.html" id="aboutMobNav">About Us</a></li>
-
-                    <li><a href="development.html" id="devMobNav">Our developments</a></li>
-
-                    <li><a href="land.html" id="landMobNav">Land</a></li>
-
-                    <li><a href="contact.html" id="contactMobNav">Contact</a></li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <script>
-
-            function addClass(classname, element) {
-
-                var cn = element.className;
-
-                //test for existance
-
-                if (cn.indexOf(classname) != -1) {
-
-                    return;
-
-                }
-
-                //add a space if the element already has class
-
-                if (cn != '') {
-
-                    classname = ' ' + classname;
-
-                }
-
-                element.className = cn + classname;
-
-            }
-
-
-
-            function removeClass(classname, element) {
-
-                var cn = element.className;
-
-                var rxp = new RegExp("\\s?\\b" + classname + "\\b", "g");
-
-                cn = cn.replace(rxp, '');
-
-                element.className = cn;
-
-            }
-
-            var mobMenu = document.getElementById("mobile-menu");
-
-            var mobMenuOpen = 0;
-
-
-
-            function toggleMobMenu() {
-
-                if (mobMenuOpen == 0) {
-
-                    addClass('expand', mobMenu);
-
-                    mobMenuOpen = 1;
-
-                } else {
-
-                    removeClass('expand', mobMenu);
-
-                    mobMenuOpen = 0;
-
-                }
-
-            }
-
-
-
-        </script>
-
-
-
-<title>Contact - Elm Park Homes</title>
-
-	<body id="contact">
-		<div class="container">
-			<div class="leftHeader">Contact us</div>
-
-			<p class="clear">To find out more about the homes we have for sale or to send us a message, complete the form below.</p>
-			<div class="row">
-				<div class="col-sm-12 col-md-6 col-md-offset-1 ">
-					
-
-<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
-
-<script>
-
-	
-
-	function formEntry() {
-
-			var self = this;
-
-			var name = $("input#fldname").val();
-
-			var subject = $("input#fldsubject").val();
-
-			var email = $("input#fldemail").val();
-
-			var comment = $("textarea#fldcomment").val();
-
-			var dataString = 'name=' + name + '&subject=' + subject + '&email=' + email + '&comment=' + comment;
-
-			//alert(dataString);
-
-			$.ajax({
-
-				type: "POST",
-
-				url: "mail.php",
-
-				data: dataString,
-
-				success: function() {
-
-					$("input#fldname").prop('disabled', true);
-
-					$("input#fldsubject").prop('disabled', true);
-
-					$("input#fldemail").prop('disabled', true);
-
-					$("textarea#fldcomment").prop('disabled', true);
-
-					$('#sub-button').hide();
-
-					$('#formThankYou').html("<p style='text-align:center;font-size:1.3em;color:#fff;'>Thank you for your message.</p>")
-
-						.hide()
-
-						.fadeIn(1500);
-
-				}
-
-			});
-
-
-
-			return false;
-
-		}
-
-</script>  
-
-<div id="form-div">
-
-    <form class="form" id="form1" method="post" onSubmit="return formEntry();" enctype="multipart/form-data">      
-
-      <p class="name">
-
-        <input name="fldname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fldname" required/>
-
-      </p>      
-
-      <p class="email">
-
-        <input name="fldemail" type="email" class="validate[required,custom[email]] feedback-input" id="fldemail" placeholder="Email" required/>
-
-      </p>
-
-        <p class="subject">
-
-        <input name="fldsubject" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Subject" id="fldsubject" required/>
-
-      </p>      
-
-      <p class="text">
-
-        <textarea name="fldcomment" class="validate[required,length[6,300]] feedback-input" id="fldcomment" placeholder="Comment" required></textarea>
-
-      </p>     
-
-      <div class="submit" id="sub-button">
-
-        <input type="submit" value="SEND" id="button-blue"/>
-
-        <div class="ease"></div>
-
+        <div></div>
       </div>
 
-		<div id="formThankYou"></div>
+      <ul class="mobile-menu" id="mobile-menu">
+        <li><a href="../" id="homeMobNav">Home</a></li>
 
-    </form>
+        <li><a href="about.html" id="aboutMobNav">About Us</a></li>
 
+        <li><a href="development.html" id="devMobNav">Our developments</a></li>
+
+        <li><a href="land.html" id="landMobNav">Land</a></li>
+
+        <li><a href="contact.html" id="contactMobNav">Contact</a></li>
+      </ul>
+    </div>
   </div>
-				</div>
-				<div class="col-sm-12 col-md-4 col-md-offset-1 contactDetails">
-                    <span class="h2"><i class="fa fa-phone"></i> 01604 580291</span>
-                    <span class="h2"><i class="fa fa-phone"></i> 07710 077133</span>
-                    <span class="h2"><a href="https://twitter.com/elmparkhomes" target="_blank"><i class="fa fa-twitter-square"></i> @ElmParkHomes</a></span>
-                    <span class="h2"><a href="https://www.facebook.com/Elm-Park-Homes-149196215273991/" target="_blank"><i class="fa fa-facebook-square"></i> /Elm-Park-Homes</a></span>
-				</div>
-			</div>
-		</div>
-	</body>
 
-	</html>
-	<div class="footer">
+  <script>
+    function addClass(classname, element) {
+      var cn = element.className;
 
-	<div class="container">
+      //test for existance
 
-	<div class="row">
+      if (cn.indexOf(classname) != -1) {
+        return;
+      }
 
-		<div class=" col-xs-12 col-sm-12 col-md-4" id="ftLeft">
+      //add a space if the element already has class
 
-			<span><i class="fa fa-phone"></i> 01604 580291</span>
+      if (cn != "") {
+        classname = " " + classname;
+      }
 
-			<br />
+      element.className = cn + classname;
+    }
 
-			<span><i class="fa fa-phone"></i> 07710 077133</span>
+    function removeClass(classname, element) {
+      var cn = element.className;
 
-		</div>
+      var rxp = new RegExp("\\s?\\b" + classname + "\\b", "g");
 
-		<div class="col-xs-12 col-sm-12 col-md-4" id="ftMid">
+      cn = cn.replace(rxp, "");
 
-			<ul class="noStyle" id="ftList">
+      element.className = cn;
+    }
 
-				<li><a href="https://www.facebook.com/Elm-Park-Homes-149196215273991/" target="_blank"><i class="fa fa-facebook-square"></i> </a></li>
+    var mobMenu = document.getElementById("mobile-menu");
 
-				<li><a href="https://twitter.com/elmparkhomes" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    var mobMenuOpen = 0;
 
-			</ul>
+    function toggleMobMenu() {
+      if (mobMenuOpen == 0) {
+        addClass("expand", mobMenu);
 
-		</div>
+        mobMenuOpen = 1;
+      } else {
+        removeClass("expand", mobMenu);
 
-		<div class="col-xs-12 col-sm-12 col-md-4" id="ftRight">
+        mobMenuOpen = 0;
+      }
+    }
+  </script>
 
-			<span style="display:inline-block">website designed <br/>and created by</span>
+  <title>Contact - Elm Park Homes</title>
 
-			<a href="http://www.keyplayerpublishing.com/" target="_blank"><img id="kpLogo" src="images/kp-logo-orange.png" /></a>
+  <body id="contact">
+    <div class="container">
+      <div class="leftHeader">Contact us</div>
 
+      <p class="clear">
+        To find out more about the homes we have for sale or to send us a
+        message, complete the form below.
+      </p>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-md-offset-1">
+          <div id="form-div">
+            <form
+              class="form"
+              id="form1"
+              method="post"
+              onSubmit="return formEntry();"
+              enctype="multipart/form-data"
+              netlify
+            >
+              <p class="name">
+                <input
+                  name="fldname"
+                  type="text"
+                  class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+                  placeholder="Name"
+                  id="fldname"
+                  required
+                />
+              </p>
 
+              <p class="email">
+                <input
+                  name="fldemail"
+                  type="email"
+                  class="validate[required,custom[email]] feedback-input"
+                  id="fldemail"
+                  placeholder="Email"
+                  required
+                />
+              </p>
 
-		</div>
+              <p class="subject">
+                <input
+                  name="fldsubject"
+                  type="text"
+                  class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+                  placeholder="Subject"
+                  id="fldsubject"
+                  required
+                />
+              </p>
 
-	</div>
+              <p class="text">
+                <textarea
+                  name="fldcomment"
+                  class="validate[required,length[6,300]] feedback-input"
+                  id="fldcomment"
+                  placeholder="Comment"
+                  required
+                ></textarea>
+              </p>
 
-	</div>
+              <div class="submit" id="sub-button">
+                <input type="submit" value="SEND" id="button-blue" />
 
+                <div class="ease"></div>
+              </div>
+
+              <div id="formThankYou"></div>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-md-offset-1 contactDetails">
+          <span class="h2"><i class="fa fa-phone"></i> 01604 580291</span>
+          <span class="h2"><i class="fa fa-phone"></i> 07710 077133</span>
+          <span class="h2"
+            ><a href="https://twitter.com/elmparkhomes" target="_blank"
+              ><i class="fa fa-twitter-square"></i> @ElmParkHomes</a
+            ></span
+          >
+          <span class="h2"
+            ><a
+              href="https://www.facebook.com/Elm-Park-Homes-149196215273991/"
+              target="_blank"
+              ><i class="fa fa-facebook-square"></i> /Elm-Park-Homes</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftLeft">
+        <span><i class="fa fa-phone"></i> 01604 580291</span>
+
+        <br />
+
+        <span><i class="fa fa-phone"></i> 07710 077133</span>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftMid">
+        <ul class="noStyle" id="ftList">
+          <li>
+            <a
+              href="https://www.facebook.com/Elm-Park-Homes-149196215273991/"
+              target="_blank"
+              ><i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/elmparkhomes" target="_blank"
+              ><i class="fa fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftRight">
+        <span style="display: inline-block"
+          >website designed <br />and created by</span
+        >
+
+        <a href="http://www.keyplayerpublishing.com/" target="_blank"
+          ><img id="kpLogo" src="images/kp-logo-orange.png"
+        /></a>
+      </div>
+    </div>
+  </div>
 </div>
-
-
