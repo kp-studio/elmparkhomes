@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <div class="container" id="header">
+    <a href="index.html" id="homeNav"
+      ><img id="headLogo" class="left" src="images/elm-park-logo.png"
+    /></a>
+
+    <ul class="noStyle right" id="navList">
+      <li><a href="contact.html" id="contactNav">Contact</a></li>
+
+      <li>|</li>
+
+      <li><a href="land.html" id="landNav">Land</a></li>
+
+      <li>|</li>
+
+      <li><a href="development.html" id="devNav">Our developments</a></li>
+
+      <li>|</li>
+
+      <li><a href="about.html" id="aboutNav">About Us</a></li>
+
+      <li>|</li>
+
+      <li><a href="index.html" id="homeNav">Home</a></li>
+    </ul>
+
+    <div class="mobile-nav">
+      <div class="mobile-btn" onclick="toggleMobMenu();">
+        <div></div>
+
+        <div></div>
+
+        <div></div>
+      </div>
+
+      <ul class="mobile-menu" id="mobile-menu">
+        <li><a href="../" id="homeMobNav">Home</a></li>
+
+        <li><a href="about.html" id="aboutMobNav">About Us</a></li>
+
+        <li><a href="development.html" id="devMobNav">Our developments</a></li>
+
+        <li><a href="land.html" id="landMobNav">Land</a></li>
+
+        <li><a href="contact.html" id="contactMobNav">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function addClass(classname, element) {
+      var cn = element.className;
+
+      //test for existance
+
+      if (cn.indexOf(classname) != -1) {
+        return;
+      }
+
+      //add a space if the element already has class
+
+      if (cn != "") {
+        classname = " " + classname;
+      }
+
+      element.className = cn + classname;
+    }
+
+    function removeClass(classname, element) {
+      var cn = element.className;
+
+      var rxp = new RegExp("\\s?\\b" + classname + "\\b", "g");
+
+      cn = cn.replace(rxp, "");
+
+      element.className = cn;
+    }
+
+    var mobMenu = document.getElementById("mobile-menu");
+
+    var mobMenuOpen = 0;
+
+    function toggleMobMenu() {
+      if (mobMenuOpen == 0) {
+        addClass("expand", mobMenu);
+
+        mobMenuOpen = 1;
+      } else {
+        removeClass("expand", mobMenu);
+
+        mobMenuOpen = 0;
+      }
+    }
+  </script>
+
+  <head>
+    <meta
+      name="google-site-verification"
+      content="6AGv1p9EZRBwUqpaz-W_wSAG-G0jwwKkBLjM3qksg5M"
+    />
+    <title>Elm Park Homes || House building company in South Midlands</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta
+      name="description"
+      content="Elm Park Homes are a privately owned house building company specialising in well-built traditional homes primarily across the South Midlands, and have a reputation for building quality homes"
+    />
+  </head>
+  <body id="home">
+    <div class="bs-example">
+      <div
+        id="myCarousel"
+        class="carousel slide"
+        data-interval="3000"
+        data-ride="carousel"
+      >
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <img src="images/home-1.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/home-2.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/home-3.jpg" />
+          </div>
+          <div class="item">
+            <img src="images/home-4.jpg" />
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="leftHeader">Welcome to Elm Park Homes</h2>
+      <p class="clear">
+        Elm Park Homes are a privately owned house building company specialising
+        in well-built traditional homes primarily across the South Midlands, and
+        have a reputation for building quality homes. As a smaller developer we
+        are passionate about innovative designs and flair and are committed to
+        delivering a quality product for our buyers.
+      </p>
+    </div>
+  </body>
+</html>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftLeft">
+        <span><i class="fa fa-phone"></i> 01604 580291</span>
+
+        <br />
+
+        <span><i class="fa fa-phone"></i> 07710 077133</span>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftMid">
+        <ul class="noStyle" id="ftList">
+          <li>
+            <a
+              href="https://www.facebook.com/Elm-Park-Homes-149196215273991/"
+              target="_blank"
+              ><i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/elmparkhomes" target="_blank"
+              ><i class="fa fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-4" id="ftRight">
+        <span style="display: inline-block"
+          >website designed <br />and created by</span
+        >
+
+        <a href="http://www.keyplayerpublishing.com/" target="_blank"
+          ><img id="kpLogo" src="images/kp-logo-orange.png"
+        /></a>
+      </div>
+    </div>
+  </div>
+</div>

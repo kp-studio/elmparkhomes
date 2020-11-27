@@ -1,0 +1,206 @@
+	<!DOCTYPE html>
+
+	<html lang="en">
+
+        <head>
+
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+            <link rel="stylesheet" href="css/bootstrap.css">
+
+            <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+                <link rel="stylesheet" href="css/style.css">
+
+                <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        </head>
+
+        <div class="container" id="header">
+
+            <a href="index.html" id="homeNav"><img id="headLogo" class="left" src="images/elm-park-logo.png" /></a>
+
+            <ul class="noStyle right" id="navList">
+
+                <li><a href="contact.html" id="contactNav">Contact</a></li>
+
+                <li>|</li>
+
+                <li><a href="land.html" id="landNav">Land</a></li>
+
+                <li>|</li>
+
+                <li><a href="development.html" id="devNav">Our developments</a></li>
+
+                <li>|</li>
+
+                <li><a href="about.html" id="aboutNav">About Us</a></li>
+
+                <li>|</li>
+
+                <li><a href="index.html" id="homeNav">Home</a></li>
+
+            </ul>
+
+            <div class="mobile-nav">
+
+                <div class="mobile-btn" onclick="toggleMobMenu();">
+
+                    <div></div>
+
+                    <div></div>
+
+                    <div></div>
+
+                </div>
+
+                <ul class="mobile-menu" id="mobile-menu">
+
+                    <li><a href="../" id="homeMobNav">Home</a></li>
+
+                    <li><a href="about.html" id="aboutMobNav">About Us</a></li>
+
+                    <li><a href="development.html" id="devMobNav">Our developments</a></li>
+
+                    <li><a href="land.html" id="landMobNav">Land</a></li>
+
+                    <li><a href="contact.html" id="contactMobNav">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <script>
+
+            function addClass(classname, element) {
+
+                var cn = element.className;
+
+                //test for existance
+
+                if (cn.indexOf(classname) != -1) {
+
+                    return;
+
+                }
+
+                //add a space if the element already has class
+
+                if (cn != '') {
+
+                    classname = ' ' + classname;
+
+                }
+
+                element.className = cn + classname;
+
+            }
+
+
+
+            function removeClass(classname, element) {
+
+                var cn = element.className;
+
+                var rxp = new RegExp("\\s?\\b" + classname + "\\b", "g");
+
+                cn = cn.replace(rxp, '');
+
+                element.className = cn;
+
+            }
+
+            var mobMenu = document.getElementById("mobile-menu");
+
+            var mobMenuOpen = 0;
+
+
+
+            function toggleMobMenu() {
+
+                if (mobMenuOpen == 0) {
+
+                    addClass('expand', mobMenu);
+
+                    mobMenuOpen = 1;
+
+                } else {
+
+                    removeClass('expand', mobMenu);
+
+                    mobMenuOpen = 0;
+
+                }
+
+            }
+
+
+
+        </script>
+
+
+
+    <title>About us - Elm Park Homes</title>
+
+    <body id="about">
+        <div class="jumbotron">
+            <img src="images/about.jpg"/>
+        </div>
+        
+        <div class="container">
+			<div class="leftHeader">About us</div>
+            <p class="clear">Elm Park Homes was established in 2004 with a vision of providing new homes with great design, excellent build quality and high specification.  The company is privately owned  and prioritise quality and longevity over quick profits to ensure that our developments stand the test of time.</p>
+            <p>Our homes are traditionally built but provide the convenience of practically and low maintenance demanded by today's modern lifestyles. </p>
+            <p>We provide a first class service allowing customers to individually design aspects of their own home from tile and kitchen choices, through to bespoke extras where available. </p>
+            <p>We are serious about customer service and always aim to be professional, efficient and helpful and are happy to offer advice to help you make the right choice, for you. 
+            </p>
+        </div>
+            
+    </body>
+</html>
+<div class="footer">
+
+	<div class="container">
+
+	<div class="row">
+
+		<div class=" col-xs-12 col-sm-12 col-md-4" id="ftLeft">
+
+			<span><i class="fa fa-phone"></i> 01604 580291</span>
+
+			<br />
+
+			<span><i class="fa fa-phone"></i> 07710 077133</span>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-4" id="ftMid">
+
+			<ul class="noStyle" id="ftList">
+
+				<li><a href="https://www.facebook.com/Elm-Park-Homes-149196215273991/" target="_blank"><i class="fa fa-facebook-square"></i> </a></li>
+
+				<li><a href="https://twitter.com/elmparkhomes" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+			</ul>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-4" id="ftRight">
+
+			<span style="display:inline-block">website designed <br/>and created by</span>
+
+			<a href="http://www.keyplayerpublishing.com/" target="_blank"><img id="kpLogo" src="images/kp-logo-orange.png" /></a>
+
+
+
+		</div>
+
+	</div>
+
+	</div>
+
+</div>
+
