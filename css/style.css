@@ -406,7 +406,7 @@ img {
   font-weight: 700;
   background-image: url(../img/plane.svg);
   background-size: 30px 30px;
-  background-position: 260px 20px;
+  background-position: 70% 22px;
   background-repeat: no-repeat;
 }
 
@@ -449,7 +449,11 @@ img {
   .leftHeader {
     width: 100%;
     padding-right: 0px;
-  }
+	}
+	
+	#header {
+		width: 95%;
+	}
 
   .footer {
     text-align: center;
@@ -467,7 +471,8 @@ img {
   #form-div {
     float: none;
     margin: 30px auto;
-    padding-bottom: 30px;
+		padding-bottom: 30px;
+		width: 100%;
   }
 
   #navList {
