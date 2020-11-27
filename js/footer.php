@@ -30,7 +30,7 @@
 
 			<span style="display:inline-block">website designed <br/>and created by</span>
 
-			<a href="http://www.keyplayerpublishing.com/" target="_blank"><img id="kpLogo" src="images/kp-logo.png" /></a>
+			<a href="https://kpstudio.co.uk/" target="_blank"><img id="kpLogo" src="images/kp-logo.png" /></a>
 
 
 
